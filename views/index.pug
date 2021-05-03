@@ -1,0 +1,17 @@
+extends layout 
+
+block content
+    header 
+        #{title}
+    
+    body(class="body bg-success")
+        div(class="container bg-light shadow main-content")
+            div(class="m-3 p-3 text-center")
+                h1(class="my-2") Mensajes
+                ul(class="list-unstyled")  
+                    each message in messages
+                        li(class="border border-success my-4 p-3")= `${message.user} : ${message.text} - ${message.added}`
+
+                
+                    div(class="text-center m-4")
+                        a(href="/new" class="btn btn-success btn-lg" role="button") Ingresa Un Mensaje
